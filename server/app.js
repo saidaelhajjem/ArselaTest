@@ -7,6 +7,7 @@ var logger = require('morgan');
 const connectDB = require("./config/db");
 const config = require("config");
 var pagesRouter = require('./routes/pages');
+var typeRouter = require('./routes/typeRouter');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -29,6 +30,7 @@ connectDB();
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/pages", pagesRouter);
+app.use("/types", typeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
