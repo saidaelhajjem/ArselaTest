@@ -12,7 +12,6 @@ exports.register = (req, res)=> {
       password: input.password,
       role: input.role
     });
-    console.log(user);
     user.save(function(err) {
       if (err) {
         res.json({

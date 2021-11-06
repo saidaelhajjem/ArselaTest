@@ -11,6 +11,7 @@ var typeRouter = require('./routes/typeRouter');
 var formRouter = require('./routes/formRouter');
 var roleRouter = require('./routes/roleRouter');
 var user = require('./routes/userRouter');
+var userFormRouter = require('./routes/userFormRouter');
 
 var indexRouter = require('./routes/index');
 
@@ -35,6 +36,8 @@ app.use("/types", typeRouter);
 app.use("/forms", formRouter);
 app.use("/roles", roleRouter);
 app.use("/user", user);
+app.use("/userForms",userFormRouter );
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
