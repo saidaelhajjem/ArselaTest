@@ -1,6 +1,6 @@
 var Type = require('../Models/type');
 
-// create page
+// create type
 exports.create_type =  (req, res) => {
     var input = JSON.parse(JSON.stringify(req.body));
     let type = new Type({
