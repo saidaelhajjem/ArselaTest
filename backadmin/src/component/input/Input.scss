@@ -1,0 +1,24 @@
+.blc-input {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #000;
+        margin: 0 0 15px;
+    }
+
+    input {
+        height: 40px;
+    }
+
+    textarea,
+    input {
+        border: none;
+        border-bottom: 1px solid gray;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
