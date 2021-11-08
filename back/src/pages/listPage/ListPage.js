@@ -1,4 +1,4 @@
-import React , { useContext, useEffect, useState }from 'react';
+import React , {  useEffect, useState }from 'react';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import { Table, Tag, Space } from 'antd';
@@ -17,9 +17,13 @@ export default function ListPage() {
           if (response.success == true) {
             setDataPage(response.list)
               };})
-              console.log('data',dataPage);
           } 
       
+          const deletePage = (data) => {
+            pageService.deletePage(data).then((response) => {
+             
+              })
+              } 
 
     const columns = [
         {
@@ -44,7 +48,7 @@ export default function ListPage() {
           render: (text, record) => (
             <Space size="middle">
               <a>Modifier</a>
-              <a>Supprimer</a>
+              <a  >Supprimer</a>
             </Space>
           ),
         },

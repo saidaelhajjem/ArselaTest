@@ -1,7 +1,8 @@
 
 export const pageService = {
     create,
-    getAll
+    getAll,
+    deletePage
   }
 
   function create(data) {
@@ -26,6 +27,21 @@ export const pageService = {
     }
   
     return fetch(`http://127.0.0.1:3000/pages/getAll`, requestOptions)
+      .then(handleResponse)
+      .then((page) => {
+        
+        return page
+      })
+  }
+  
+  function deletePage(data) {
+    const requestOptions = {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    }
+  
+    return fetch(`http://127.0.0.1:3000/pages/delete/${data}`, requestOptions)
       .then(handleResponse)
       .then((page) => {
         
