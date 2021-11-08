@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+var cors = require('cors')
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -7,12 +8,16 @@ var logger = require('morgan');
 const connectDB = require("./config/db");
 const config = require("config");
 var pagesRouter = require('./routes/pages');
+var typeRouter = require('./routes/typeRouter');
+var formRouter = require('./routes/formRouter');
+var roleRouter = require('./routes/roleRouter');
+var user = require('./routes/userRouter');
+var userFormRouter = require('./routes/userFormRouter');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var app = express();
-
+app.use(cors());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -25,10 +30,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect Database
 connectDB();
-
+app.set("secretKey", "Arsela");
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use("/pages", pagesRouter);
+app.use("/types", typeRouter);
+app.use("/forms", formRouter);
+app.use("/roles", roleRouter);
+app.use("/user", user);
+app.use("/userForms",userFormRouter );
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

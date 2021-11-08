@@ -10,6 +10,9 @@ const PagesSchema = new mongoose.Schema(
         },
         description: {
             type: String,
+        },
+        form: {
+            type: [{ type : mongoose.Schema.Types.ObjectId, ref: 'Form' }],
         }
     },
     {
