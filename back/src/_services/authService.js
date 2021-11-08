@@ -1,5 +1,5 @@
 
-export const authLogin = {
+export const authService = {
     login,
   }
 

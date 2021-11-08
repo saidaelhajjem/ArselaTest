@@ -1,0 +1,50 @@
+.auth {
+  background-color: #f3f3f3;
+  min-height: 100vh;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.formulaire {
+  max-width: 550px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.blc-input {
+  margin: 0 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0 0 15px;
+}
+
+input {
+  height: 40px;
+}
+
+textarea,
+input {
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+button {
+  margin: 0 auto;
+  display: block;
+}

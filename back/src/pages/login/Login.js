@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import React , { useState }from 'react';
 import "antd/dist/antd.css";
-import { authLogin } from "../../_services/authLogin";
+import { authService } from "../../_services/authService";
 import { Form, Input, Button, Checkbox } from "antd";
 import { useHistory } from "react-router-dom";
 
@@ -22,8 +21,7 @@ export default function Login() {
   };
 
   const login = (data) => {
-    authLogin.login(data).then((response) => {
-      console.log("res", response);
+    authService.login(data).then((response) => {
       if (response.success == true) {
         history.push(`/view`);
       } else {
@@ -95,3 +93,4 @@ export default function Login() {
     </Form>
   );
 }
+
