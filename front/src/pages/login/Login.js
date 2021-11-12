@@ -4,6 +4,7 @@ import "antd/dist/antd.css";
 import { authLogin } from "../../_services/authLogin";
 import { Form, Input, Button, Checkbox } from "antd";
 import { useHistory } from "react-router-dom";
+import './Login.scss';
 
 export default function Login() {
   const history = useHistory();
@@ -39,6 +40,10 @@ export default function Login() {
   };
 
   return (
+    <>
+    <div className="global">
+    <div className="form">
+      <h1 className="title">Login</h1>
     <Form
       name="basic"
       labelCol={{
@@ -93,5 +98,9 @@ export default function Login() {
         </Button>
       </Form.Item>
     </Form>
+    </div>
+    </div>
+
+    </>
   );
 }

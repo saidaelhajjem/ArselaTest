@@ -1,3 +1,45 @@
+.global{
+  background-image: url("../../assets/images/background.jpg");
+  background-size: cover;
+  height: 100vh;
+  padding-top: 176px;
+    .form{
+      background-color: #dadada85;
+  width: 500px;
+  margin: 0 auto;
+  border: 2px solid #dadadada;
+  border-radius: 14px;
+  .title{
+    font-size: 20px;
+    text-align: center;
+    color: #2db395;
+    font-weight:bold;
+
+  }
+  .ant-form{
+    padding-right: 80px;
+    .ant-form-item{
+      .ant-input{
+        border-radius: 10px;
+      }
+      .ant-input-affix-wrapper{
+        border-radius: 10px;
+
+      }
+      .ant-btn{
+        width: 100%;
+        border-radius: 10px;
+
+      }
+      .ant-btn-primary {
+        border-color: #2db395;
+        background: #2db395;}
+    }
+  }
+    
+  }
+}
+
 @media all and (min-width: 480px) {
     .Login {
       padding: 60px 0;
