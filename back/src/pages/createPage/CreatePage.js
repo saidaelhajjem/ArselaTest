@@ -1,13 +1,26 @@
 import { Input } from "antd";
 import Sider from "antd/lib/layout/Sider";
 import TextArea from "rc-textarea";
-import React , { useState }from 'react';
+import React , { useState,useEffect }from 'react';
 import "./CreatePage.css";
 import { pageService } from "../../_services/pageService";
 import { useHistory } from "react-router-dom";
 
 
-const CreatePage = () => {
+const CreatePage = (props) => {
+  const userId =props.match.params.id;
+  useEffect(() => {
+    if(userId)getPage(userId)
+    
+  }, [userId]);// N’exécute l’effet que si userId a changé
+
+  const getPage = (data) => {
+   
+    pageService.getPage(data).then((response) => {
+    setDataPage(response)
+    });
+  };
+
 
     const [dataPage, setDataPage] = useState({
         title: "",
