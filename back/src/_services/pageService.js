@@ -2,7 +2,8 @@ export const pageService = {
     create,
     getAll,
     deletePage,
-    getPage
+    getPage,
+    updatePage
     
   }
 
@@ -58,6 +59,21 @@ export const pageService = {
     }
   
     return fetch(`http://127.0.0.1:3000/pages/getById/${data}`, requestOptions)
+      .then(handleResponse)
+      .then((page) => {
+        
+        return page
+      })
+  }
+
+  function updatePage(id,data) {
+    const requestOptions = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    }
+  
+    return fetch(`http://127.0.0.1:3000/pages/update/${id}`, requestOptions)
       .then(handleResponse)
       .then((page) => {
         
